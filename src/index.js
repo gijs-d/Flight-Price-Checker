@@ -1,13 +1,13 @@
 const Bowser = require('./lib/bowser');
 const bowser = new Bowser('');
 const fs = require('fs');
-const dataFile = 'output/assets/js/data.js'
+const dataFile = 'output/assets/js/data.js';
 const { checkDays, citys, urls, headless } = require('./config');
 let first = true;
 
 process.on('unhandledRejection', async (e) => {
     console.error(`Unhandled Rejection: ${e}`);
-    if (bowser.isConnected()) await bowser.close();
+    if (bowser.isConnected()) { await bowser.close(); }
     process.exit(1);
 });
 
@@ -43,7 +43,7 @@ async function init() {
         days = Math.floor(days / (1000 * 60 * 60 * 24));
         skip = days > 0 ? days : 0;
     }
-    let result = await Promise.all([
+    const result = await Promise.all([
         loadTrip(checkDays.to, true, skip),
         loadTrip(checkDays.from, false, skip + checkDays.stay)
     ]);
@@ -55,22 +55,22 @@ async function init() {
 function printResults(result) {
     const printDiv = (name) => console.log(`${Array(37).join('-')}\n\n\t ${name}\n\n`);
     const [to, from] = result;
-    printDiv('10 cheapest to')
+    printDiv('10 cheapest to');
     printTop10(to, 'to');
-    printDiv('10 cheapest from')
+    printDiv('10 cheapest from');
     printTop10(from, 'from');
-    printDiv('all to')
+    printDiv('all to');
     for (let i = 0; i < to.length; i++) {
         console.log(to[i]);
     }
-    printDiv('all from')
+    printDiv('all from');
     for (let i = 0; i < from.length; i++) {
         console.log(from[i]);
     }
 }
 
 function printTop10(arr) {
-    let cheapestPriceto = [...arr];
+    const cheapestPriceto = [...arr];
     cheapestPriceto.sort();
     for (let i = 0; i < 10; i++) {
         if (cheapestPriceto[i]) {
@@ -86,11 +86,11 @@ function makeDay(today) {
 
 async function loadTrip(days, to = true, stay = 0) {
     console.log(`loadTrip \t ${to ? 'to' : 'from'} \t start`);
-    let prices = [];
-    let today = new Date();
+    const prices = [];
+    const today = new Date();
     today.setDate(today.getDate() + stay);
     for (let i = 0; i < days; i++) {
-        let day = makeDay(today);
+        const day = makeDay(today);
         today.setDate(today.getDate() + 1);
         prices[i] = await checkDay(day, to);
         console.log(`loadTrip \t ${to ? 'to' : 'from'} \t loaded ${i + 1}/${days}`);
@@ -109,7 +109,7 @@ async function checkDay(day, to = true) {
                 clearTimeout(timeout);
                 timeout = setTimeout(reject, 10000);
                 page = await bowser.openPage(urls[to ? 'to' : 'from'](day));
-                await new Promise(wait => setTimeout(wait, 2000))
+                await new Promise(wait => setTimeout(wait, 2000));
                 const privacy = await bowser.isElementVisible(page, privbtn);
                 if (privacy) {
                     await bowser.clickElement(page, privbtn);
@@ -125,13 +125,13 @@ async function checkDay(day, to = true) {
                     result = `${res.replaceAll('.', '')} - ${day}`;
                     resolve();
                 }
-            })
-        } catch (e) {
+            });
+        } catch {
             clearTimeout(timeout);
         }
         try {
             await page.close();
-        } catch (e) { }
+        } catch { /* empty */ }
     }
     return result;
 }

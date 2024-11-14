@@ -3,9 +3,9 @@ const puppeteer = require('puppeteer');
 class Bowser {
     page;
     browser;
-    
+
     constructor(url) {
-        if (url) this.url = url;
+        if (url) { this.url = url; }
     }
 
     async load(headless = true) {
@@ -31,7 +31,7 @@ class Bowser {
     }
 
     async clickElement(page, selector, lenght) {
-        let element = await this.isElementVisible(page, selector);
+        const element = await this.isElementVisible(page, selector);
         if (element) {
             await page.click(selector, lenght ? { delay: lenght } : {});
         }
@@ -39,10 +39,10 @@ class Bowser {
     }
 
     async getText(page, selector) {
-        let element = await this.isElementVisible(page, selector);
+        const element = await this.isElementVisible(page, selector);
         let value = undefined;
         if (element) {
-            let elem = await page.$(selector);
+            const elem = await page.$(selector);
             value = await elem.evaluate(el => el.textContent);
         }
         return value || element;

@@ -16,4 +16,4 @@ module.exports = {
         to: (day) => `https://www.bing.com/travel/flight-search?src=${citys.from}&des=${citys.to}&ddate=${day}`,
         from: (day) => `https://www.bing.com/travel/flight-search?src=${citys.to}&des=${citys.from}&ddate=${day}`
     }
-}
+};
