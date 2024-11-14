@@ -55,7 +55,7 @@ module.exports = {
 2. **Run the Script**: Execute the script to start checking flight prices:
 
    ```bash
-   node src/index.js
+   npm start
    ```
 
 3. **View Results**: After the script completes, you can view the results in the webpage located at:
