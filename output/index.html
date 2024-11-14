@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flights</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <h1>Flights <span id="from"></span> <span id="to"></span></h1>
+  <form>
+    <label for="rev">Reverse:
+      <input type="checkbox" id="rev">
+    </label>
+    <label for="stay">Stay for:
+      <input type="number" id="stay" value="30">
+    </label>
+    <label for="show">show:
+      <input type="number" id="show" value="5">
+    </label>
+  </form>
+
+  <main>
+    <table class="to">
+    </table>
+    <div>
+      <table class="from">
+      </table>
+    </div>
+  </main>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
