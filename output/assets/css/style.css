@@ -46,12 +46,11 @@ form {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
 }
 
 form label {
   display: block;
-  margin-left: 20px ;
+  margin-left: 20px;
 }
 
 main {
@@ -63,10 +62,12 @@ td {
   padding: 5px 20px;
   height: 30px;
 }
-td:nth-child(3){
+
+td:nth-child(3) {
   box-sizing: border-box;
-  min-width:125px
+  min-width: 125px
 }
+
 .to tr:hover {
   background-color: #777;
   cursor: pointer;

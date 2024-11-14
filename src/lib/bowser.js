@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 class Bowser {
     page;
     browser;
+    
     constructor(url) {
         if (url) this.url = url;
     }

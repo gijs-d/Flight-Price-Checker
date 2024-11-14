@@ -1,14 +1,10 @@
 # Flight Price Checker
 
-
 This project is a flight price checker that uses Puppeteer to scrape flight prices from Bing Travel. You can configure the source and destination cities, as well as the days to check for flight prices.
-
 
 ## Configuration
 
-
 You can configure the project in the `src/config.js` file. Here are the available configuration options:
-
 
 ```javascript
 const citys = {
@@ -31,6 +27,7 @@ module.exports = {
     }
 }
 ```
+
 ### Parameters
 
 - **citys**: 
@@ -49,29 +46,23 @@ module.exports = {
 
 ## Running the Project
 
-
 1. **Install Dependencies**: Make sure you have Node.js installed. Then, install the required dependencies by running:
-
 
    ```bash
    npm install
    ```
 
-
 2. **Run the Script**: Execute the script to start checking flight prices:
-
 
    ```bash
    node src/index.js
    ```
-
 
 3. **View Results**: After the script completes, you can view the results in the webpage located at:
 
    ```
    output/index.html
    ```
-
 
 ## Output
 
@@ -80,7 +71,6 @@ The output will display the flight prices for the specified routes based on the 
 - **Click on a table row** to show flights back and total price.
 - **Click on the link** associated with a date to navigate to the specific flight details.
 - **Click on "Reverse"** to show flights back home first, and see the flights to the destination when clicked.
-
 
 ![Screenshot of the Output](/Screenshot1.png)
 
