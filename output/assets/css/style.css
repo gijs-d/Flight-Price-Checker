@@ -1,95 +1,95 @@
 :root {
-  --background-color: #000;
-  --text-color: #fff;
-  --red: rgb(139, 0, 0);
-  --green: rgb(83, 105, 48);
-  --orange: rgb(155, 107, 17);
-}
-
-html {
-  height: 100%;
+	--background-color: #000;
+	--green: rgb(83, 105, 48);
+	--orange: rgb(155, 107, 17);
+	--red: rgb(139, 0, 0);
+	--text-color: #fff;
 }
 
 html,
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+html {
+	height: 100%;
 }
 
 body {
-  min-height: 100%;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-input {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: thin solid white;
-  border-radius: 5px;
-}
-
-a {
-  color: goldenrod;
-}
-
-a:hover {
-  color: var(--text-color);
-}
-
-h1 {
-  text-align: center;
-}
-
-form {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-form label {
-  display: block;
-  margin-left: 20px;
+	background-color: var(--background-color);
+	color: var(--text-color);
+	min-height: 100%;
 }
 
 main {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+form label {
+	display: block;
+	margin-left: 20px;
+}
+
+input {
+	background-color: var(--background-color);
+	border: thin solid white;
+	border-radius: 5px;
+	color: var(--text-color);
 }
 
 td {
-  padding: 5px 20px;
-  height: 30px;
+	height: 30px;
+	padding: 5px 20px;
 }
 
 td:nth-child(3) {
-  box-sizing: border-box;
-  min-width: 125px
+	box-sizing: border-box;
+	min-width: 125px;
 }
 
-.to tr:hover {
-  background-color: #777;
-  cursor: pointer;
+a {
+	color: goldenrod;
 }
 
-.to tr.open:hover {
-  background-color: var(--green);
+a:hover {
+	color: var(--text-color);
 }
 
-.open,
-.cheapest {
-  background-color: var(--green);
+.cheapest,
+.open {
+	background-color: var(--green);
 }
 
 .cheap1 {
-  background-color: var(--green);
+	background-color: var(--green);
 }
 
 .cheap2 {
-  background-color: var(--orange);
+	background-color: var(--orange);
 }
 
 .cheap3 {
-  background-color: var(--red);
+	background-color: var(--red);
+}
+
+.to tr:hover {
+	background-color: #777;
+	cursor: pointer;
+}
+
+.to tr.open:hover {
+	background-color: var(--green);
 }

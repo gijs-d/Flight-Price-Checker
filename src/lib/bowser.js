@@ -72,7 +72,7 @@ class Bowser {
             visible = false;
         }
         return visible;
-    };
+    }
 
 }
 

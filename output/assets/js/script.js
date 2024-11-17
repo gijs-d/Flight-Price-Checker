@@ -58,10 +58,10 @@ function openReturns(e, times, priceTo, priceFrom) {
   if (d < 0) { d = times[1].length; }
   const days = times[1].filter((t, i) => (i >= d - (reverse ? options.show - 1 : 0)) && (i < d + (reverse ? 1 : options.show)));
   const [cheap1, cheap2, cheap3] = days.map(t => Number(t[1].split(' ')[1]) + price).sort((a, b) => a - b);
-  const checkPrice = (price) => {
-    if (price == cheap1) { return 'cheap1'; }
-    if (price == cheap2) { return 'cheap2'; }
-    if (price == cheap3) { return 'cheap3'; }
+  const checkPrice = (currentPrice) => {
+    if (currentPrice == cheap1) { return 'cheap1'; }
+    if (currentPrice == cheap2) { return 'cheap2'; }
+    if (currentPrice == cheap3) { return 'cheap3'; }
     return '';
   };
   const html = days.map(t => `<tr>
